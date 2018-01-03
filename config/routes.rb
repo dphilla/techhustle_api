@@ -6,10 +6,11 @@ root "docs#index"
 
 namespace :api do
   namespace :v1 do
-    resources :users, only: [:new, :create, :show, :index]
+    resources :users, only: [:create, :show, :index]
     resources :contacts
-    resources :events, only: [:new, :create, :show, :index]
+    resources :events, only: [:create, :show, :index]
     resources :interactions
+    resources :notes, except: [:new, :edit]
   end
 end
 
