@@ -11,7 +11,7 @@ class User < ApplicationRecord
    summary = oauth_info["summary"]
 
 
-   where(oauth_id: uid).first_or_create do |new_user|
+   where(uid: uid).first_or_create do |new_user|
      new_user.uid = uid
      new_user.picture_url = picture
      new_user.title = title

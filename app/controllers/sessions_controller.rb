@@ -18,28 +18,11 @@ class SessionsController < ApplicationController
 
     parsed = JSON.parse(linked_user_info)
 
-    #User.login_from_linked_in(parsed)
+    current_user = User.login_from_linked_in(parsed)
+
+
 
     require 'pry'; binding.pry
-
-    #user_xml = Nokogiri::XML(linked_user_info)
-
-    #linkedin_id = user_xml.xpath("//id")[0].children[0].text
-
-
-
-
-      #oauth_response = Faraday.get("https://api.github.com/user?access_token=#{token}")
-      #auth = JSON.parse(oauth_response.body)
-
-      #user = User.find_or_create_by(uid: auth["id"])
-      #user.username = auth["login"]
-      #user.uid = auth["id"]
-      #user.token = token
-      #user.save
-
-      #session[:user_id] = user.id
-      #redirect_to dashboard_index_path
 
   end
 
