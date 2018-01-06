@@ -10,7 +10,6 @@ class User < ApplicationRecord
    org = oauth_info["positions"]["values"][0]["company"]["name"]
    summary = oauth_info["summary"]
 
-
    where(uid: uid).first_or_create do |new_user|
      new_user.uid = uid
      new_user.picture_url = picture
