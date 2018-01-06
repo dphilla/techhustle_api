@@ -18,6 +18,8 @@ class SessionsController < ApplicationController
 
     parsed = JSON.parse(linked_user_info)
 
+    #User.login_from_linked_in(parsed)
+
     require 'pry'; binding.pry
 
     #user_xml = Nokogiri::XML(linked_user_info)
