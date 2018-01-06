@@ -14,4 +14,6 @@ namespace :api do
   end
 end
 
+get "/auth/linkedin/callback", to: "sessions#create"
+
 end
