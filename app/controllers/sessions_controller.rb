@@ -15,6 +15,13 @@ class SessionsController < ApplicationController
     parsed = JSON.parse(linked_user_info)
 
     current_user = User.login_from_linked_in(parsed)
+    CurrentUser.set_current_user(current_user.id)
+  end
+
+  def destroy
+    current_user_id = User.find(id).id
+    user = CurrentUser.find_by(current_user: current_user_id)
+    user.destroy
   end
 
 end

@@ -15,5 +15,8 @@ namespace :api do
 end
 
 get "/auth/linkedin/callback", to: "sessions#create"
+delete "/auth/end", to: "sessions#destroy"
+
+get "/current_user", to: "currentusers#show"
 
 end
