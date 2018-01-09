@@ -3,11 +3,11 @@ class Api::V1::EventsController < ApplicationController
   before_action :current_user
 
   def index
-    render json: Event.all
+    render json: @current_user.events.all
   end
 
   def show
-    render json: Event.find(params[:id])
+    render json: @current_user.events.find(params[:id])
   end
 
   def create

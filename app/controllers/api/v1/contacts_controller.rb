@@ -1,7 +1,9 @@
 class Api::V1::ContactsController < ApplicationController
 
+  before_action :current_user
+
   def index
-    @contacts = Contact.all
+    @contacts = @current_user.contacts.all
     render json: @contacts
   end
 
@@ -15,7 +17,7 @@ class Api::V1::ContactsController < ApplicationController
   end
 
   def show
-     render json: Contact.find(params[:id])
+    render json: @current_user.contacts.find(params[:id])
   end
 
   def update
