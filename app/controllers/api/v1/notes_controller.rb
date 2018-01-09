@@ -1,6 +1,8 @@
 
 class Api::V1::NotesController < ApplicationController
 
+  before_action :current_user
+
   def index
     render json: Note.all
   end

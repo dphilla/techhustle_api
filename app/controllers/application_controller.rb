@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::API
 
-  #how are you going to check for current user?
+
+    def current_user
+      user_id = params["current_user"].to_i
+      @current_user = User.find(user_id) if CurrentUser.last.id == user_id
+    end
 
 end

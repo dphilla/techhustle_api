@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    current_user_id = User.find(id).id
+    current_user_id = User.find(params["id"]).id
     user = CurrentUser.find_by(current_user: current_user_id)
     user.destroy
   end

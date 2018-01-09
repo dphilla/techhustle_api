@@ -1,5 +1,7 @@
 class Api::V1::EventsController < ApplicationController
 
+  before_action :current_user
+
   def index
     render json: Event.all
   end
