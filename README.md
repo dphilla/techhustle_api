@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+All Available EndPoints in Production: http://powerful-stream-11261.herokuapp.com/ (most require authentication)
 
-Things you may want to cover:
+## To Run Locally
 
-* Ruby version
+`git clone https://github.com/dphilla/techhustle_api`
 
-* System dependencies
+`rake db:create migrate seed`
 
-* Configuration
+`rails s`
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
