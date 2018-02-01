@@ -1,6 +1,6 @@
 class Api::V1::UsersController < ApplicationController
 
-  before_action :current_user, except: :create
+  #before_action :current_user, except: :create, :show
 
   def create
     #this should be done from Linkedin Login
