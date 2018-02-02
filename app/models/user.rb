@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :user_contacts
   has_many :contacts, through: :user_contacts
+  has_many :events
 
 
   def self.login_from_linked_in(oauth_info)

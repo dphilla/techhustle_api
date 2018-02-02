@@ -11,8 +11,10 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def create
-    event = Event.new(event_params)
+    event = Event.new(title: params[:title], start_time: params[:start_time], location: params[:location], user_id: @current_user.id)
+
     if event.save
+      #event.update(user_id: @current_user.id)
       render json: "status 201"
     else
       response = "something went wrong"
@@ -20,7 +22,7 @@ class Api::V1::EventsController < ApplicationController
   end
 
     def event_params
-      params.permit(:title, :start_time)
+      #params.permit(:title, :start_time, :location)
     end
 
 end

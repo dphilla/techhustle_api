@@ -1,6 +1,5 @@
 class Api::V1::InteractionsController < ApplicationController
 
-  #how are you going to check for current user?
   before_action :current_user
 
   def index

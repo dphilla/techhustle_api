@@ -10,6 +10,7 @@ class Api::V1::ContactsController < ApplicationController
   def create
     contact = Contact.new(contact_params)
     if contact.save
+      @current_user.user_contacts.create(user_id: @current_user.id, contact_id: contact.id)
       render json: "status 201"
     else
      response = "failed to create an item"
